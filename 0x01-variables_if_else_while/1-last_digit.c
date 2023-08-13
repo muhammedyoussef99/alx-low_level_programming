@@ -6,7 +6,7 @@
  * main - Entry point
  *
  * Description: print the value of n status:
- *              It prints specific message to console.
+ *              greater than, is zero, is not less than 6
  *
  * Return: 0 (Success)
 */
