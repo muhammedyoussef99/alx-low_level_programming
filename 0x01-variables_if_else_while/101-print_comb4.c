@@ -23,7 +23,7 @@ int main(void)
 			ones_digit = tens_digit + 1;
 			while (ones_digit <= 9)
 			{
-				putchar(hundreds_digit + '0')
+				putchar(hundreds_digit + '0');
 				putchar(tens_digit + '0');
 				putchar(ones_digit + '0');
 
@@ -36,12 +36,11 @@ int main(void)
 				ones_digit++;
 			}
 			tens_digit++;
-			{
+		}
+		hundreds_digit++;
+	}
 
-				hundreds_digit++;
-			}
+	putchar('\n');
 
-			putchar('\n');
-
-			return (0);
+	return (0);
 }
