@@ -10,18 +10,21 @@
 
 int main(void)
 {
-	char digit
+	char digit = '0';
 
-	while (digit = '0'; digit <= '9')
+	while (digit <= '9')
 	{
 		putchar(digit);
 		digit++;
 	}
-	while (digit = 'a'; digit <= 'f')
+
+	digit = 'a';
+	while (digit <= 'f')
 	{
 		putchar(digit);
 		digit++;
 	}
+
 	putchar('\n');
 
 	return (0);
