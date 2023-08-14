@@ -11,15 +11,15 @@ i#include <stdio.h>
 
 int main(void)
 {
-	char letter = 'a';
+	char ch = 'a';
 
-	while (letter <= 'z')
+	while (ch <= 'z')
 	{
-		if (letter != 'q' && letter != 'e')
+		if (ch != 'q' && ch != 'e')
 		{
-			putchar(letter)
+			putchar(ch)
 		}
-		letter++; // Increment the letter variable
+		ch++;
 	}
 
 	putchar('\n');
