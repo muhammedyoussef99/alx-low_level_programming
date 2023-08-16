@@ -32,7 +32,7 @@ void print_times_table(int n)
 			}
 			else if (product <= 99 && product >= 10)
 				_putchar((product / 10) + 48);
-			_putchar((product % 100) + 48);
+			_putchar((product % 10) + 48);
 			}
 			_putchar('\n');
 		}
