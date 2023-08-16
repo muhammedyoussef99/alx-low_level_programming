@@ -3,6 +3,7 @@
 /**
  * times_table - Prints the 9 times table
  */
+
 void times_table(void)
 {
 	int row, column, product;
@@ -22,10 +23,11 @@ void times_table(void)
 				if (product <= 9)
 					_putchar(' ');
 				else
-				_putchar((product / 10) + '48');
+				_putchar((product / 10) + 48);
 
-				_putchar((product % 10) + '48');
+				_putchar((product % 10) + 48);
 		}
-	}
+
 					_putchar('\n');
+	}
 }
