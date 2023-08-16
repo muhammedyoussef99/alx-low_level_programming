@@ -12,22 +12,21 @@ void times_table(void)
 
 	{
 		_putchar(48);
-		for (column = 0; column <= 9; column++)
+		for (column = 1; column <= 9; column++)
 		{
+			_putchar(',');
+			_putchar(' ');
 
-				_putchar(',');
+			product = row * column;
+
+			if (product <= 9)
 				_putchar(' ');
-
-				product = row * column;
-
-				if (product <= 9)
-					_putchar(' ');
-				else
+			else
 				_putchar((product / 10) + 48);
 
-				_putchar((product % 10) + 48);
+			_putchar((product % 10) + 48);
 		}
 
-					_putchar('\n');
+		_putchar('\n');
 	}
 }
