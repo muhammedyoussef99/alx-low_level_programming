@@ -9,11 +9,11 @@ void print_times_table(int n)
 {
 	int row, column, product;
 
-	if (n <= 15 $$ n >= 0)
+	if (n <= 15 && n >= 0)
 	{
 		for (row = 0; row <= n; row++)
 		{
-			_putchar('48');
+			_putchar(48);
 			for (column = 1; column <= n; column++)
 			{
 				_putchar(',');
