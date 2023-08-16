@@ -1,21 +1,26 @@
 #include "main.h"
 
 /**
- * sum_of_multiples - Computes and prints the sum of multiples of 3 or 5
+ * main - Entry Point
+ *
+ * Description: sum_of_multiples - Computes and
+ *		prints the sum of multiples of 3 or 5
+ *
+ * Return: 0 (Success)
 */
 
-void sum_of_multiples(void)
+int main(void)
 {
-	int sum = 0;
+	int sum, num;
 
-	for (int i = 0; i < 1024; i++)
+	for (num  = 0; num < 1024; num++)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
+		if (num % 3 == 0 || num % 5 == 0)
 		{
-			sum += i;
+			sum += num;
 		}
 	}
 
-	print_number(sum);
-	_putchar('\n');
+	printf("%d\n", sum);
+	return (0);
 }
