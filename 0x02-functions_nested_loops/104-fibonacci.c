@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * numLenght - returns the length of string
+ * numLength - returns the length of string
  *
  * @num: operand number
  *
