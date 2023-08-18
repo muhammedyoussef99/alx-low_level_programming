@@ -1,40 +1,61 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * largest_prime_factor - Finds the largest prime factor of a number.
- * @n: The number to find the largest prime factor for.
- *
- * Return: The largest prime factor of the number.
+ * squareRoot - main
+ * @x: input
+ * Return: root of x
 */
-long int largest_prime_factor(long int n)
+
+double squareRoot(double x)
 {
-	long int largest = 0;
 
-	while (n % 2 == 0)
+	float t = 0;
+	float q = x / 2;
+
+	while (q != t)
 	{
-		largest = 2;
-		n /= 2;
+		t = q;
+		q = (x / t + t) / 2;
 	}
+	return (q);
+}
+/**
+ * greatest - main
+ * @num: input2
+*/
 
-	for (long int i = 3; i <= n; i += 2)
+void greatest(long int num)
+{
+	int pr, gr;
+
+	/* while loop */
+	while (num % 2 == 0)
+		num = num / 2;
+
+	/* rule */
+	for (pr = 3; pr <= squareRoot(num); pr += 2)
 	{
-		while (n % i == 0)
+		while (num % pr == 0)
 		{
-			largest = i;
-			n /= i;
+			num = num / pr;
+			gr = pr;
 		}
 	}
 
-	return (largest);
+	if (num > 2)
+		gr = num;
+	printf("%d\n", gr);
 }
+
 /**
- * _putchar - Writes a character to the standard output (stdout).
- * @c: The character to be written.
- *
- * Return: On success, 1. On error, -1 is returned,
- * and errno is set appropriately.
+ * main - start
+ * Description: final step
+ * Return: always 0
 */
-int _putchar(char c)
+
+int main(void)
 {
-	return (write(1, &c, 1));
+	greatest(612852475143);
+
+	return (0);
 }
