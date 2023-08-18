@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * main -  prints the numbers from 1 to 100
- * replacing multiples of 3 with Fizz,
- * multiples of 5 with Buzz, and
- * multiples of both 3 and 5 with FizzBuzz.
+ * main -  prints the numbers from 1 to 100, followed by a new line.
+ *	replacing multiples of 3 with Fizz,
+ *	multiples of 5 with Buzz, and
+ *	multiples of both 3 and 5 with FizzBuzz.
+ *	each number and word to be separated by a space.
  *
  * Return: 0 (Success)
 */
