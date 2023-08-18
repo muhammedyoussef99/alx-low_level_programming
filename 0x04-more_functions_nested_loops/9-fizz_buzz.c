@@ -1,17 +1,10 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Description: Prints numbers from 1 to 100,
- * replacing multiples of 3 with Fizz,
- * multiples of 5 with Buzz, and
- * multiples of both 3 and 5 with FizzBuzz.
- *
- * Return: 0 (Success)
+ * print_fizz_buzz - Prints numbers from 1 to 100, following FizzBuzz rules.
 */
 
-int main(void)
+void print_fizz_buzz(void)
 {
 	int i;
 
@@ -19,22 +12,24 @@ int main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (i % 3 == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%d", i);
 		}
-	}
-	printf("\n");
 
-	return (0);
+		if (i != 100)
+			printf(" ");
+	}
+
+	printf("\n");
 }
