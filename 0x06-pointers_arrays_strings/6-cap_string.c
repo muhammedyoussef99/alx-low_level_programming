@@ -5,20 +5,19 @@
  * is_separator - Checks if a character is a word separator.
  * @c: The character to check.
  *
- * Return: true if the character is a separator, false otherwise.
+ * Return: 1 if the character is a separator, 0 otherwise.
 */
-bool is_separator(char c)
+int is_separator(char c)
 {
-
 	char separators[] = " \t\n,;.!?\"(){}";
 
 	for (int i = 0; separators[i] != '\0'; i++)
 	{
 		if (c == separators[i])
-			return (true);
+			return (1);
 	}
 
-	return (false);
+	return (0);
 }
 
 /**
@@ -30,6 +29,7 @@ bool is_separator(char c)
 char *cap_string(char *str)
 {
 	int new_word = 1;
+
 	char *ptr = str;
 
 	while (*ptr != '\0')
@@ -42,6 +42,7 @@ char *cap_string(char *str)
 		{
 			if (*ptr >= 'a' && *ptr <= 'z')
 			{
+
 				*ptr = *ptr - ('a' - 'A');
 			}
 			new_word = 0;
@@ -53,6 +54,7 @@ char *cap_string(char *str)
 				*ptr = *ptr + ('a' - 'A');
 			}
 		}
+
 		ptr++;
 	}
 
