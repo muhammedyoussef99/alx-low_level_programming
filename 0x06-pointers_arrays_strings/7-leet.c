@@ -1,30 +1,26 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * leet - Encodes a string into 1337 speak.
- * @str: The string to be encoded.
- *
- * Return: A pointer to the modified string.
+ * leet - mozart was genuis
+ * @a: Leet
+ * Return: v
 */
-char *leet(char *str)
+
+char *leet(char *a)
 {
-	char *ptr = str;
-	char *leet_letters = "aeotlAEOTL";
-	char *leet_numbers = "4307143071";
+	char *v = a;
+	char l[] = {'A', 'E', 'O', 'T', 'L'};
+	int n[] = {4, 3, 0, 7, 1};
+	unsigned int x;
 
-	while (*ptr)
+	while (*a)
 	{
-		for (int i = 0; leet_letters[i]; i++)
+		for (x = 0; x < sizeof(l) / sizeof(char); x++)
 		{
-			if (*ptr == leet_letters[i])
-			{
-				*ptr = leet_numbers[i];
-				break;
-			}
+			if (*a == l[x] || *a == l[x] + 32)
+				*a = 48 + n[x];
 		}
-		ptr++;
+		a++;
 	}
-
-	return (str);
+	return (v);
 }
