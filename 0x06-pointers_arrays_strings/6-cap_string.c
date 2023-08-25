@@ -1,65 +1,56 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * isLower - Determine whether ASCII is lowercase.
- * @c: The character to check.
- *
- * Return: 1 if true, 0 otherwise.
+ * lc - main
+ * @a: input
+ * Return: 1 = true, 0 = false
 */
-int isLower(char c)
+
+int lc(char a)
 {
-	return ((c >= 'a' && c <= 'z'));
+	return (a >= 97 && a <= 122);
 }
 
 /**
- * is_separator - Determine whether ASCII is a separator.
- * @c: The character to check.
- *
- * Return: 1 if true, 0 otherwise.
+ * id - main
+ * @a: input
+ * Return: 1 = true, 0 = false
 */
-int is_separator(char c)
+
+int id(char a)
 {
-	char separators[] = "\t\n,;.!?\"(){}";
+	int x;
+	char dd[] = " \t\n,;.!?\"(){}";
 
-	for (int i = 0; i < 12; i++)
-	{
-		if (c == separators[i])
+	for (x = 0; x < 13; x++)
+		if (a == dd[x])
 			return (1);
-	}
-
 	return (0);
 }
 
 /**
- * cap_string - Capitalizes all words of a string.
- * @s: Input string.
- *
- * Return: String with capitalized words.
+ * cap_string - main
+ * @z: input
+ * Return: o
 */
-char *cap_string(char *s)
+
+char *cap_string(char *z)
 {
-	char *ptr = s;
+	int fd = 1;
+	char *o = z;
 
-	int is_separator = 1; /*Initialize is_separator to 1*/
-
-	while (*s)
+	while (*z)
 	{
-
-		if (is_separator(*s))
+		if (id(*z))
+			fd = 1;
+		else if (lc(*z) && fd)
 		{
-			is_separator = 1;
-		}
-		else if (isLower(*s) && is_separator)
-		{
-			*s -= 32; /*Convert lowercase letter to uppercase*/
-			is_separator = 0;
+			*z -= 32;
+			fd = 0;
 		}
 		else
-		{
-			is_separator = 0;
-		}
-		s++;
+			fd = 0;
+		z++;
 	}
-	return (ptr);
+	return (o);
 }
