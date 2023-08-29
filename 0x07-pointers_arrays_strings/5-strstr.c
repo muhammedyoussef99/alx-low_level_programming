@@ -1,33 +1,32 @@
-#include "main.h"
-
 /**
- * _strpbrk - Searches a string for any of a set of bytes.
- * @s: The string to be searched.
- * @accept: The string containing bytes to search for.
+ * _strstr - Locates a substring in a string.
+ * @haystack: The string to be searched.
+ * @needle: The substring to be located.
  *
- * Return: A pointer to the byte in s that matches one of the bytes in accept,
- * or NULL if no such byte is found.
+ * Return: A pointer to the beginning of the located substring,
+ * or NULL if the substring is not exist.
 */
 
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int otr, qtr;
-	char *p;
+	if (*needle == '\0')
+		return (haystack);
 
-	otr = 0;
-	while (s[otr] != '\0')
+	while (*haystack != '\0')
 	{
-		qtr = 0;
-		while (accept[qtr] != '\0')
+		char *haystack_ptr = haystack;
+		char *needle_ptr = needle;
+
+		while (*needle_ptr != '\0' && *haystack_ptr == *needle_ptr)
 		{
-			if (accept[qtr] == s[otr])
-			{
-				p = &s[otr];
-				return (p);
-			}
-			qtr++;
+			haystack_ptr++;
+			needle_ptr++;
 		}
-		otr++;
+
+		if (*needle_ptr == '\0')
+			return (haystack);
+
+		haystack++;
 	}
 
 	return (NULL);
