@@ -11,24 +11,23 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int ptr, qtr;
+	int otr, qtr;
 	char *p;
 
-	ptr = 0;
-	while (s[ptr] != '\0')
+	otr = 0;
+	while (s[otr] != '\0')
 	{
 		qtr = 0;
 		while (accept[qtr] != '\0')
 		{
-			if (accept[qtr] == s[ptr])
+			if (accept[qtr] == s[otr])
 			{
-				p = &s[ptr];
+				p = &s[otr];
 				return (p);
-
 			}
 			qtr++;
 		}
-		ptr++;
+		otr++;
 	}
 
 	return (NULL);
