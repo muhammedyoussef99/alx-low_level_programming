@@ -1,19 +1,20 @@
 
 /**
- * is_palindrome - Checks if a string is a palindrome.
+ * string_length - Checks if a string is a palindrome.
  * @s: The string to be checked.
  *
- * Return: 1 if s is a palindrome, otherwise 0.
+ * Return: int.
  */
 
-int is_palindrome(char *s)
+int is_palindrome(char *s);
+int string_length(char *s)
 {
 	int len = string_length(s);
 
 	if (len <= 1)
 		return (1);
 
-	return (check_palindrome(s, len, 0));
+	return (string_length(s, len, 0));
 }
 
 /**
@@ -32,7 +33,7 @@ int string_length(char *s)
 }
 
 /**
- * check_palindrome - Helper function to check
+ * is_palindrome - Helper function to check
  *		if a string is a palindrome recursively.
  * @s: The string to be checked.
  * @len: The length of the string.
@@ -41,7 +42,7 @@ int string_length(char *s)
  * Return: 1 if s is a palindrome, otherwise 0.
 */
 
-int check_palindrome(char *s, int len, int index)
+int is_palindrome(char *s, int len, int index)
 {
 	if (index >= len / 2)
 		return (1);
@@ -49,5 +50,5 @@ int check_palindrome(char *s, int len, int index)
 	if (s[index] != s[len - index - 1])
 		return (0);
 
-	return (check_palindrome(s, len, index + 1));
+	return (is_palindrome(s, len, index + 1));
 }
