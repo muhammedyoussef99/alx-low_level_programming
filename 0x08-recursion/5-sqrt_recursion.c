@@ -25,7 +25,7 @@ int _sqrt_recursion(int n)
  * Return: int.
 */
 
-int square(int n, int d);
+int square(int n, int d)
 {
 	if (d * d == n)
 		return (d);
