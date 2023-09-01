@@ -41,7 +41,7 @@ int is_palindrome(char *s)
  * Return: 1 if s is a palindrome, otherwise 0.
 */
 
-int check(char *s, int start, int end, int mod);
+int check(char *s, int start, int end, int mod)
 {
 	if ((start == end && mod != 0) || (start == end + 1 && mod == 0))
 		return (1);
