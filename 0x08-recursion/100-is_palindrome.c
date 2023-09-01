@@ -1,3 +1,4 @@
+#include "main.h"
 
 /**
  * string_length - Checks if a string is a palindrome.
@@ -18,13 +19,14 @@ int string_length(char *s)
 }
 
 /**
- * string_length - Calculates the length of a string.
+ * is_palindrome - Calculates the length of a string.
  * @s: The string to be measured.
  *
  * Return: The length of the string.
 */
 
-int string_length(char *s)
+int is_palindrome(char *s)
+int string_length(char *s);
 {
 	if (*s == '\0')
 		return (0);
