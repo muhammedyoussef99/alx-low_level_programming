@@ -3,7 +3,7 @@
 /**
  * _sqrt_recursion - Returns the natural
  *		square root of a number using recursion.
- * @n: the square root of.
+ * @n: the square root .
  * @d: The current guess for the square root.
  * Return: int.
 */
@@ -18,10 +18,9 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * square: function to find the square root using binary search.
- * @n: The number to find the square root of.
+ * square - find the square root using recursion.
+ * @n: The number to find the square root.
  * @d: The current guess for the square root.
- *
  * Return: int.
 */
 
