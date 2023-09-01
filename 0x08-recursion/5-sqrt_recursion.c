@@ -9,36 +9,30 @@
 */
 
 int _sqrt_recursion(int n)
+int square(int n);
 
 {
 	if (n < 0)
 		return (-1);
 
-	return (_sqrt_helper(n, 0, n));
+	return (square(n, 1));
 }
 
 /**
  * _sqrt_helper - Helper function to find the square root using binary search.
  * @n: The number to find the square root of.
- * @low: The lower bound of the search.
- * @high: The upper bound of the search.
+ * @d: The current guess for the square root.
  *
  * Return: int.
 */
 
-int _sqrt_helper(int n, int low, int high)
+int square(int n, int d);
 
 {
-	if (low > high)
+	if (d * d == n)
+		return (d);
+
+	if (d * d > n)
 		return (-1);
-
-	int mid = (low + high) / 2;
-	long long square = (long long)mid * mid;
-
-	if (square == n)
-		return (mid);
-	else if (square < n)
-		return (_sqrt_helper(n, mid + 1, high));
-	else
-		return (_sqrt_helper(n, low, mid - 1));
+	return (square(n, d + 1));
 }
