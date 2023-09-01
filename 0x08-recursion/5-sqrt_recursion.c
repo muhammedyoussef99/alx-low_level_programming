@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * _sqrt_helper - Helper function to find the square root using binary search.
+ * square: function to find the square root using binary search.
  * @n: The number to find the square root of.
  * @d: The current guess for the square root.
  *
