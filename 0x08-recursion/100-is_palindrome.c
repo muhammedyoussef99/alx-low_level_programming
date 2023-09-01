@@ -8,49 +8,46 @@
  */
 
 int is_palindrome(char *s);
+int check(char *s, int start, int end, int mod);
 int string_length(char *s)
 {
-	int len = string_length(s);
+	int n = 0;
 
-	if (len <= 1)
-		return (1);
-
-	return (string_length(s, len, 0));
+	if (*s > '\0')
+		n += string_length(s + 1) + 1;
+	return (n);
 }
 
 /**
  * is_palindrome - Calculates the length of a string.
  * @s: The string to be measured.
  *
- * Return: The length of the string.
+ * Return: 0 or 1.
 */
 
 int is_palindrome(char *s)
-int string_length(char *s);
 {
-	if (*s == '\0')
-		return (0);
-	else
-		return (1 + string_length(s + 1));
+	int end = string_length(s);
+
+	return (check(s, 0, end - 1, end % 2));
 }
 
 /**
- * is_palindrome - Helper function to check
- *		if a string is a palindrome recursively.
+ * check - checker if a string is a palindrome recursively.
  * @s: The string to be checked.
- * @len: The length of the string.
- * @index: The current index of the string being checked.
- *
+ * @start: int moves from right to left.
+ * @end: int moves from left to right.
+ * @mod: int.
  * Return: 1 if s is a palindrome, otherwise 0.
 */
 
-int is_palindrome(char *s, int len, int index)
+int check(char *s, int start, int end, int mod);
 {
-	if (index >= len / 2)
+	if ((start == end && mod != 0) || (start == end + 1 && mod == 0))
 		return (1);
 
-	if (s[index] != s[len - index - 1])
+	else if (s[start] != s[end])
 		return (0);
-
-	return (is_palindrome(s, len, index + 1));
+	else
+		return (check(s, start + 1, end - 1, mod));
 }
