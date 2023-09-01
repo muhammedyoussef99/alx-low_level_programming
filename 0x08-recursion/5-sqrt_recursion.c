@@ -4,13 +4,12 @@
  * _sqrt_recursion - Returns the natural
  *		square root of a number using recursion.
  * @n: the square root of.
- *
+ * @d: The current guess for the square root.
  * Return: int.
 */
 
+int square(int n, int d);
 int _sqrt_recursion(int n)
-int square(int n);
-
 {
 	if (n < 0)
 		return (-1);
@@ -27,7 +26,6 @@ int square(int n);
 */
 
 int square(int n, int d);
-
 {
 	if (d * d == n)
 		return (d);
