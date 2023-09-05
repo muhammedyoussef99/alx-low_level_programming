@@ -15,6 +15,7 @@ int _strlen(char *s)
 	;
 	return (size);
 }
+
 /**
  * argstostr - concatenates all the arguments of your program
  * @ac: the number of arguments
@@ -25,7 +26,7 @@ int _strlen(char *s)
 char *argstostr(int ac, char **av)
 {
 	int total_length = 0;
-	int x, y, z = 0;
+	int x = 0, y = 0, z = 0;
 	char *cd;
 
 	if (ac == 0 || av == NULL)
@@ -33,9 +34,7 @@ char *argstostr(int ac, char **av)
 
 	for (; x < ac; x++, total_length++)
 		total_length += _strlen(av[x]);
-
-	cd = malloc((total_length + 1) * sizeof(char));
-
+	cd = malloc(sizeof(char) * total_length + 1);
 	if (cd == 0)
 		return (NULL);
 
