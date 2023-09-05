@@ -10,11 +10,12 @@
  */
 char *argstostr(int ac, char **av)
 {
-	if (ac == 0 || av == NULL)
-		return (NULL);
-
 	int total_length = 0;
 	int x, y, z = 0;
+	char *cd = malloc((total_length + 1) * sizeof(char));
+
+	if (ac == 0 || av == NULL)
+		return (NUll);
 
 	for (x = 0; x < ac; x++)
 	{
@@ -23,7 +24,6 @@ char *argstostr(int ac, char **av)
 	}
 
 	total_length += ac;
-	char *cd = malloc((total_length + 1) * sizeof(char));
 
 	if (cd == NULL)
 		return (NULL);
@@ -37,7 +37,7 @@ char *argstostr(int ac, char **av)
 		}
 		if (x < ac - 1)
 		{
-			cd[k] = '\n';
+			cd[z] = '\n';
 			z++;
 		}
 	}
