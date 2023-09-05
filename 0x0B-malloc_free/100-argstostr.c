@@ -31,7 +31,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (; x < ac; x++; total_length++)
+	for (; x < ac; x++, total_length++)
 		total_length += _strlen(av[x]);
 
 	cd = malloc((total_length + 1) * sizeof(char));
@@ -41,7 +41,7 @@ char *argstostr(int ac, char **av)
 
 	for (x = 0; x < ac; x++)
 	{
-		for (y = 0; av[x][y] != '\0'; y++; z++)
+		for (y = 0; av[x][y] != '\0'; y++, z++)
 			cd[z] = av[x][y];
 
 		cd[z] = '\n';
