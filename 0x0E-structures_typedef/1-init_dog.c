@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 
 /**
  * init_dog - Initializes a struct Dog with provided values.
@@ -7,8 +8,7 @@
  * @age: The age of the dog.
  * @owner: The owner's name of the dog.
  *
- * Description: This function initializes the fields of a struct Dog
- * with the provided values for name, age, and owner.
+ * Return: void.
  */
 void init_dog(struct Dog *d, char *name, float age, char *owner);
 {
