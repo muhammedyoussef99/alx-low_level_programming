@@ -1,25 +1,24 @@
 #ifndef DOG_H
 #define DOG_H
-
 /**
- * struct Dog - Represents information about a dog.
- * @name: The name of the dog (string).
- * @age: The age of the dog (float).
- * @owner: The owner of the dog (string).
+ * struct dog - dog data
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: name of the owner of the dog
  *
  * Description: This structure stores information about a dog,
  * including its name, age, and owner's name.
  */
-struct Dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+} dog_t;
 
+int _putchar(char c);
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
-
-#endif /* DOG_H */
+#endif
